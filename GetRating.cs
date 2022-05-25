@@ -16,7 +16,7 @@ namespace Company.Function
             [CosmosDB("mhmd-ratings-db", "ratingscontainer", ConnectionStringSetting = "RatingsDatabase", SqlQuery = "Select * from ratings r where r.id = {id}")]IEnumerable<RatingModel> rating,
             ILogger log)
         {
-            log.LogInformation("Gettingss Ratings");           
+            log.LogInformation("Gettingss Ratingss");           
             if (rating == null)
             {   
                 return new NotFoundResult();
