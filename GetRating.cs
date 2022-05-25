@@ -23,7 +23,7 @@ namespace Company.Function
             }
             else
             {
-                return new OkObjectResult(rating);
+                return new OkObjectResult(rating);   
             }
         }
     }
