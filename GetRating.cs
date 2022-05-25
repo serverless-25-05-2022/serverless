@@ -16,11 +16,11 @@ namespace Company.Function
             [CosmosDB("mhmd-ratings-db", "ratingscontainer", ConnectionStringSetting = "RatingsDatabase", SqlQuery = "Select * from ratings r where r.id = {id}")]IEnumerable<RatingModel> rating,
             ILogger log)
         {
-            log.LogInformation("Getting Rating");
+            log.LogInformation("Getting Ratings");
             if (rating == null)
-            {
+            {   
                 return new NotFoundResult();
-            }
+            }  
             else
             {
                 return new OkObjectResult(rating);                                
