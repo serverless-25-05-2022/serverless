@@ -32,12 +32,12 @@ namespace Company.Function
             _userid = _userid ?? data?.userId;
             _productid = _productid ?? data?.productId;
 
-            var result = await _httpClient.GetAsync($"https://serverlessohuser.trafficmanager.net/api/GetUser/?userid={_userid}");
+            var result = await _httpClient.GetAsync($"https://serverlessohapi.azurewebsites.net/api/GetUser?userId={_userid}");
             var resultContent = await result.Content.ReadAsStringAsync();
 
             if (result.IsSuccessStatusCode)
             {
-                var resultProduct = await _httpClient.GetAsync($"https://serverlessohproduct.trafficmanager.net/api/GetProduct?productId={_productid}");
+                var resultProduct = await _httpClient.GetAsync($"https://serverlessohapi.azurewebsites.net/api/GetProduct?productId={_productid}");
                 var resultProductContent = await result.Content.ReadAsStringAsync();
 
                 if (resultProduct.IsSuccessStatusCode)
